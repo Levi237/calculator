@@ -23,11 +23,82 @@ const divide = (num1, num2) => {
 const multiply = (num1, num2) => {
     return num1 * num2
 }
-// A user should be able to see the output.
+
+
+const getHistory = () => {
+    return document.getElementById("history-value").innerText;
+}
+console.log(getHistory());
+    
+const printHistory = (num) => {
+    return document.getElementById("history-value").innerText = num;
+}
+
+const getOutput = () => {
+    if (num = "") {
+        document.getElementById("output-value").innerText = num;
+    }
+    return document.getElementById("output-value").innterText = getFormattedNumber(num);
+}
+
+const getFormattedNumber = (num) => {
+    let n = Number(num);
+    let value = n.toLocaleString("en");
+    return value;
+}
+
+const reverseNumberFormat = (num) => {
+    return Number(num.replace(/,/g,''));
+}
+
+const operator = document.getElementsByClassName("operator");
+for (let i = 0; i < operator.length; i++) {
+    operator[i].addEventListener('click', () => {
+        if (this.id == "clear") {
+            printHistory('');
+            printOutput('');
+        }
+        else if (this.id == "backspace") {
+            let output = reverseNumberFormat(getOutput()).toString();
+            if (output){
+                output = output.substr(0, output.length - 1); // backspace
+                printOutput(output); 
+            }
+        } else {
+            let output = getOutput();
+            let history = getHistory();
+            if (output != '') {
+                output = reverseNumberFormat(output);
+                history = histsory + output;
+                if(this.id == '=') {
+                    let result = eval(history);
+                    printOutput(result);
+                    printHistory('');
+                }
+            }
+        }
+    });
+}
+
+
+const number = document.getElementsByClassName("number");
+for (let i = 0; i < number.length; i++) {
+    number[i].addEventListener('click', () => {
+        let output=reverseNumberFormat(getOutput());
+        if (output != Nan) {
+            output = output+this.id;
+            printOutput(output);
+        }
+    });
+}
+
+     // A user should be able to see the output.
 //---> need window to produce value
 // A user should be able to clear errant input in the middle of a calculation.
 //---> need clear new input button
 //---> need clear all button
+
+
 
 // create <div id="calculatorShell"></div> 
 // create buttons <span or div class="button"></> or <button/> with click
@@ -44,7 +115,7 @@ const multiply = (num1, num2) => {
 mini texas instrument
 screen to allow view of prior command moving upward
     
-*/
+
 document.addEventListener('click',(event) => {
     let li = document.createElement('li');
     if ( !event.target.classList.contains('button') ){
@@ -86,7 +157,7 @@ document.addEventListener('click',(event) => {
         li.textContent = "9";  // turn this into button click value???
         document.querySelector('#display').appendChild(li);
         console.log("click 9")
-    } else if (event.target.classList.contains('0')){ 
+    } else if (event.target.classList.contains('o')){ 
         li.textContent = "0";  // turn this into button click value???
         document.querySelector('#display').appendChild(li);
         console.log("click 0")
@@ -94,21 +165,41 @@ document.addEventListener('click',(event) => {
         li.textContent = "+";  // turn this into button click value???
         document.querySelector('#display').appendChild(li);
         console.log("click add")
-    } else {
-        li.textContent = "hello"  // turn this into button click value???
-        document.querySelector('#display').appendChild(li)
-        console.log("clicke hello")
+    } else if (event.target.classList.contains('subtract')){ 
+        li.textContent = "-";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click subtract")
+    } else if (event.target.classList.contains('multiply')){ 
+        li.textContent = "x";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click multiply")
+    } else if (event.target.classList.contains('divide')){ 
+        li.textContent = "/";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click divide")
+    } else if (event.target.classList.contains('add')){ 
+        li.textContent = "+";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click add")
+    } else if (event.target.classList.contains('clear')){ 
+        li.textContent = "clear attempt";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click clear")
+    // } else {
+    //     li.textContent = "hello"  // turn this into button click value???
+    //     document.querySelector('#display').appendChild(li)
+    //     console.log("clicke hello")
             }
     }, false);
 
-    // document.addEventListener('click',(event) => {
-    //     if ( event.target.querySelector('#1') ){
-    //         const li = document.createElement('li');
-    //         li.textContent = "1"  // turn this into button click value???
-    //         document.querySelector('#display').appendChild(li)
-    //             }
-    //     }, false);
-
+    document.addEventListener('click',(event) => {
+        if ( event.target.querySelector('#1') ){
+            const li = document.createElement('li');
+            li.textContent = "1"  // turn this into button click value???
+            document.querySelector('#display').appendChild(li)
+                }
+        }, false);
+*/
 /* EXAMPLE
 <form enctype="multipart/form-data" action="" method="post">
     <p>Upload file(s)</p>
