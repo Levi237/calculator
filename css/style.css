@@ -1,0 +1,22 @@
+#head, #body{
+    width: 9.5rem;
+}
+
+#display {
+    height: 9rem;
+    width: 9.5rem;
+    background-color: gray;
+    text-align: right;
+    list-style: none;
+    
+}
+
+#enter {
+    width: 6.25rem;
+}
+.button {
+    width: 3rem;
+    cursor: pointer;
+}
+
+/* i don't like rem */
