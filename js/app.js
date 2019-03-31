@@ -51,8 +51,13 @@ screen to allow view of prior command moving upward
     
 */
 document.addEventListener('click',(event) => {
-    if ( !event.target.classList.contains('button') )
+    if ( !event.target.classList.contains('button') ){
         return;
+    } else {
+        const li = document.createElement('li');
+        li.textContent = "hello"  // turn this into button click value???
+        document.querySelector('#display').appendChild(li)
+            }
     }, false);
     
 /*  EXAMPLE:

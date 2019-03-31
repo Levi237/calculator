@@ -1,6 +1,11 @@
-#head, #body{
-    width: 9.5rem;
+#head {
+
 }
+
+#footer {
+    margin: .25rem;
+}
+
 
 #display {
     height: 9rem;
@@ -8,14 +13,18 @@
     background-color: gray;
     text-align: right;
     list-style: none;
+    margin: .25rem;
     
 }
 
+#clear-all {
+    width: 4.25rem;
+}
 #enter {
-    width: 6.25rem;
+    width: 5rem;
 }
 .button {
-    width: 3rem;
+    width: 2rem;
     cursor: pointer;
 }
 
