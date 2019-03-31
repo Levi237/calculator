@@ -26,7 +26,7 @@ const multiply = (num1, num2) => {
 
 
 const getHistory = () => {
-    return document.getElementById("history-value").innerText;
+    // return document.getElementById("history-value").innerText;
 }
 console.log(getHistory());
     

@@ -8,12 +8,12 @@
 
 
 #display {
-    height: 9rem;
+    height: 1rem;
     width: 8.75rem;
     background-color: gray;
     text-align: right;
     list-style: none;
-    margin: .25rem;
+    margin: 0 .25rem;
     vertical-align: text-bottom;
     border-radius: 4%;
 }
@@ -28,6 +28,7 @@
     width: 2rem;
     cursor: pointer;
     text-align: center;
+    font-size-adjust: inherit;
 }
 
 /* i don't like rem */
