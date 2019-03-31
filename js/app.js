@@ -34,40 +34,89 @@ const multiply = (num1, num2) => {
 // 1-9, +,-,/,x,C,CA,<-
 /* 4 by 4 grid - maybe it could also take keyboard input?
 
-        /,x,-,+
-        1,2,3,CA
-        4,5,6,C
-        7,8,9,D
+        C, CA,/
+        1,2,3,X
+        4,5,6,-
+        7,8,9,+
+        0,., =
 */
 /*
 mini texas instrument
 screen to allow view of prior command moving upward
-
-    shell will need fixed dimensions and radius corners
-    16 buttons, each size has to fit within the shell in a 
-        4 by 4 pattern with a 
-        header for the output
-        this could be done with a div or button/text box.
     
 */
 document.addEventListener('click',(event) => {
+    let li = document.createElement('li');
     if ( !event.target.classList.contains('button') ){
         return;
+    } else if (event.target.classList.contains('1')){ 
+        li.textContent = "1";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 1")
+        // li = ""
+    } else if (event.target.classList.contains('2')){ 
+        li.textContent = "2";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 2")
+    } else if (event.target.classList.contains('3')){ 
+        li.textContent = "3";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 3")
+    } else if (event.target.classList.contains('4')){ 
+        li.textContent = "4";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 4")
+    } else if (event.target.classList.contains('5')){ 
+        li.textContent = "5";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 5")
+    } else if (event.target.classList.contains('6')){ 
+        li.textContent = "6";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 6")
+    } else if (event.target.classList.contains('7')){ 
+        li.textContent = "7";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 7")
+    } else if (event.target.classList.contains('8')){ 
+        li.textContent = "8";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 8")
+    } else if (event.target.classList.contains('9')){ 
+        li.textContent = "9";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 9")
+    } else if (event.target.classList.contains('0')){ 
+        li.textContent = "0";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click 0")
+    } else if (event.target.classList.contains('add')){ 
+        li.textContent = "+";  // turn this into button click value???
+        document.querySelector('#display').appendChild(li);
+        console.log("click add")
     } else {
-        const li = document.createElement('li');
         li.textContent = "hello"  // turn this into button click value???
         document.querySelector('#display').appendChild(li)
+        console.log("clicke hello")
             }
     }, false);
-    
-/*  EXAMPLE:
-const btn = document.querySelector('button'); // 'button' = <button/>
-btn.addEventListener('click', (event) => {
-    const li = document.createElement('li');
-    li.textContent = input.value
-    document.querySelector('ul').appendChild(li)
-    input.value = 'your email here' // to clear window
-}) 
+
+    // document.addEventListener('click',(event) => {
+    //     if ( event.target.querySelector('#1') ){
+    //         const li = document.createElement('li');
+    //         li.textContent = "1"  // turn this into button click value???
+    //         document.querySelector('#display').appendChild(li)
+    //             }
+    //     }, false);
+
+/* EXAMPLE
+<form enctype="multipart/form-data" action="" method="post">
+    <p>Upload file(s)</p>
+    <div id="files">
+        <p><input type="file" name="uploaded_file[]" /></p>
+    </div>
+    <p><input type="button" value="Add File" onclick="addFile();" /></p>
+</form>
 */
 
 

@@ -11,52 +11,37 @@
 </head>
 <body>
    <div id="shell">
+           <!-- shell will need fixed dimensions and radius corner -->
        <div id="header" class="box">
            <!-- <form><input></form> nice try but no.-->
            <div id="display"></div>
         </div>
        <div id="footer" class="box">   
-            <button id="clear" class="button">C</button>
-            <button id="clear-all" class="button">CA</button>
-            <button id="divide" class="button">/</button>
+            <button id="clear" class="button clear">C</button>
+            <button id="clear-all" onclick="reset()">CA</button>
+            <button id="divide" class="button divide">/</button>
           </br>    
-            <button id="7" class="button">7</button>
-            <button id="8" class="button">8</button>
-            <button id="9" class="button">9</button>
-            <button id="multiply" class="button">x</button>
+            <button id="7" class="button 7">7</button>
+            <button id="8" class="button 8">8</button>
+            <button id="9" class="button 9">9</button>
+            <button id="multiply" class="button multiply">x</button>
          </br>    
-            <button id="4" class="button">4</button>
-            <button id="5" class="button">5</button>
-            <button id="6" class="button">6</button>
-            <button id="subtract" class="button">-</button>
+            <button id="4" class="button 4">4</button>
+            <button id="5" class="button 5">5</button>
+            <button id="6" class="button 6">6</button>
+            <button id="subtract" class="button subtract">-</button>
           <br/>  
         <!-- will try to make this dry with a vanilla loop later -->
-            <button id="1" class="button">1.</button>
-            <button id="2" class="button">2</button>
-            <button id="3" class="button">3</button>
-            <button id="add" class="button">+</button>
+            <button id="1" class="button 1">1</button>
+            <button id="2" class="button 2">2</button>
+            <button id="3" class="button 3">3</button>
+            <button id="add" class="button add">+</button>
           <br/>
             <button id="0" class="button">0</button>
             <button id="dot" class="button">.</button>
             <button id="enter" id="enter">ENTER</button>
-
      </div>
-    <!-- copeid to js - 
-    shell will need fixed dimensions and radius corners
-    16 buttons, each size has to fit within the shell in a 
-        4 by 4 pattern with a 
-        header for the output
-        this could be done with a div or button/text box.
-     -->
- 
+
    </div>
-
-   <button onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
-
-<script>
-
-</script>
 </body>
 </html>
