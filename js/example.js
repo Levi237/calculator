@@ -41,20 +41,49 @@ const calculator = {
     // console.log('clear', target.value);
     return;
   }
+// splice code start
+if (target.classList.contains('backspace')) {
+    inputBackspace();
+    updateDisplay();
+    // console.log('backspace', target.value);
+    console.log("this backspace is working");
+  }
+
+// -->
+// //   else if (this.id == "backspace") {
+// //     let output = reverseNumberFormat(getOutput()).toString();
+// //     if (output){
+// //         output = output.substr(0, output.length - 1); // backspace
+// //         printOutput(output); 
+// //     }
+// // splice code break
     inputDigit(target.value);
     updateDisplay();
     // console.log('digit', target.value);
 });
 
-// const { target } = event;
-// is equivalent to
-// const target = event.target;
-// that's what the first statement does
-//If the element that was clicked is not a button...
-// if (!target.matches('button')) {
-//     //exit the function
-//     return;
-//   }
+//splice code cont
+function inputBackspace() {
+    let displayLength = calculator.displayValue.length;
+    calculator.displayValue = calculator.displayValue.slice(0, displayLength - 1);
+//  --displayLength;
+    
+    // calculator.displayValue.length - 1;
+    // console.log("backspace");
+    console.log("calculator.displayValue.length");
+}
+// btnBackspace.onclick = () => {
+//     let lengthOfDisplayValue = displayValue.length; 
+//     displayValue = displayValue.slice(0, lengthOfDisplayValue - 1); // We weant to only get rid of the last character each time
+
+//     if (displayValue === '') {
+//         displayValue = '0'; // Always want it to be 0
+//     }
+//     displayValArea.innerText = displayValue;
+// }
+
+  
+//splice code stop
 
   function inputDigit(digit) {
     const { displayValue, waitingForSecondOperand } = calculator;
